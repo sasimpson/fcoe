@@ -103,12 +103,7 @@ if __name__ == "__main__":
             client.put_container(storage_url, token, c)
     
     fp = open('/dev/random', 'r')
-    if options.size == 32:
-        data = fp.read(32767)
-    elif options.size == 64:
-        data = fp.read(65536)
-    else:
-        data = fp.read(options.size*1024)
+    data = fp.read(options.size*1024)
     fp.close()
     
     fp = open('errors.txt', 'a')
