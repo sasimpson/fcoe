@@ -28,7 +28,7 @@ if __name__ == '__main__':
     if args.a:
         x = datetime(datetime.now().year, 1, 1)
         while(x.year == today.year):
-            print x, is_queso_week(x)
+            print "%s: %s" % (x.strftime("%b %d, %Y"), is_queso_week(x))
             x += timedelta(days=1)
     else:
         if is_queso_week(today):
